@@ -193,6 +193,10 @@ func (s *Server) Count() int {
 	return s.engine.Count()
 }
 
+func (s *Server) GetEngine() *engineio.Server {
+	return s.engine
+}
+
 // ForEach sends data by DataFunc, if room does not exits sends nothing.
 func (s *Server) ForEach(namespace string, room string, f EachFunc) bool {
 	nspHandler := s.getNamespace(namespace)
